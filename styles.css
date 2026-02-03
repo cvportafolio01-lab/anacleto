@@ -159,7 +159,7 @@ p {
     justify-content: center;
     position: relative;
     background: 
-        url('images/anacletoprincipal.jpeg') center center / cover no-repeat;
+        url('images/anacletoprincipal.webp') center center / cover no-repeat;
     background-attachment: fixed;
 }
 
@@ -1250,26 +1250,10 @@ p {
         margin-top: 40px;
     }
     
-    .timeline-linea {
-        left: 30px;
-    }
+ 
+  
     
-    .timeline-evento {
-        width: calc(100% - 60px);
-        margin-left: 60px !important;
-    }
-    
-    .timeline-evento:nth-child(odd) .timeline-punto,
-    .timeline-evento:nth-child(even) .timeline-punto {
-        left: -45px;
-        right: auto;
-    }
-    
-    .timeline-evento:nth-child(odd) .timeline-tipo,
-    .timeline-evento:nth-child(even) .timeline-tipo {
-        left: 15px;
-        right: auto;
-    }
+
     
     .dignidad-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1378,32 +1362,46 @@ p {
 }
 /*modificacion */
 /* ============================================
-   FIX CRÍTICO TIMELINE
-============================================ */
 
-/* evita crecimiento infinito */
-.seccion-timeline {
-    overflow: hidden;
-}
 
-/* contenedor con cierre real */
-.timeline-container {
-    padding-bottom: 120px;
-}
-
-/* imagen con altura fija (clave) */
-.timeline-imagen {
-    display: block;
-    height: 180px;
-    background-color: rgba(255,255,255,0.08);
-}
-
-/* línea NO empuja layout */
-.timeline-linea {
-    pointer-events: none;
-}
 
 /* previene saltos por AOS */
 [data-aos] {
     will-change: transform, opacity;
+}
+
+/* ============================================
+   TIMELINE – AJUSTE FINAL MÓVIL
+============================================ */
+@media (max-width: 576px) {
+
+    .timeline-container {
+        padding-left: 0;
+    }
+
+    .timeline-linea {
+        left: 16px;
+    }
+
+    .timeline-evento {
+        width: 100%;
+        margin-left: 0 !important;
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+    .timeline-punto {
+        left: 6px !important;
+        right: auto !important;
+        top: 32px;
+    }
+
+    .timeline-tipo {
+        left: 50px !important;
+        right: auto !important;
+    }
+
+    .timeline-imagen {
+        height: 160px;
+    }
 }
