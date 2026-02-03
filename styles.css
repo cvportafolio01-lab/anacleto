@@ -797,7 +797,10 @@ p {
     border: 1px solid rgba(196, 165, 116, 0.2);
     margin-bottom: 60px;
     transition: var(--transicion-suave);
+    padding: 50px 30px 30px 30px; /* aumentar padding-top */
 }
+
+  
 
 .timeline-evento:hover {
     background-color: rgba(255, 255, 255, 0.08);
@@ -871,7 +874,7 @@ p {
 /* Tipo */
 .timeline-tipo {
     position: absolute;
-    top: 15px;
+    top: 5px;
     font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1405,3 +1408,8 @@ p {
         height: 160px;
     }
 }
+
+
+
+
+
