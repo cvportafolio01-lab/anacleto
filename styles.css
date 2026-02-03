@@ -153,14 +153,27 @@ p {
    VINCULADO A: scripts.js (efecto parallax)
    ============================================ */
 .hero-section {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background: 
-        url('images/anacletoprincipal.webp') center center / cover no-repeat;
-    background-attachment: fixed;
+    overflow: hidden; /* evita problemas en Safari */
+    color: #fff; /* para texto encima del fondo */
+    text-align: center;
+}
+.hero-section::before {
+    content: "";
+    position: fixed; /* simula background-attachment: fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('images/anacletoprincipal.webp') center center / cover no-repeat;
+    background-color: #000; /* color de fondo mientras carga la imagen */
+    transform: translateZ(0); /* fuerza renderizado en Safari */
+    will-change: transform; /* optimiza animación parallax */
 }
 
 .hero-overlay {
