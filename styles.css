@@ -429,10 +429,15 @@ p {
 }
 
 .quien-fue-imagen img {
-    width: 100%;
-    filter: sepia(15%);
-    transition: var(--transicion-suave);
+    width: 120%;          /* más ancha */
+    max-width: none;
+    margin-left: -10%;    /* centra horizontal */
+    height: 480px;
+    object-fit: cover;    /* mantiene proporción */
+    object-position: center right;  /* ⬅ baja la imagen */
+    margin-bottom: 40px; 
 }
+
 
 .quien-fue-imagen:hover img {
     filter: sepia(0%);
@@ -558,13 +563,18 @@ p {
 
 .imagen-causa {
     position: relative;
-    padding: 20px;
+    padding: 40px;
 }
 
 .imagen-causa img {
     width: 100%;
     filter: sepia(20%);
     transition: var(--transicion-suave);
+    width: 120%;              /* ⬅ más ancha */
+    max-width: none;
+    margin-left: -10%;        /* centra visualmente */
+    height: 480px;
+    object-fit: cover;
 }
 
 .imagen-causa:hover img {
@@ -874,10 +884,11 @@ p {
 /* Imagen */
 .timeline-imagen {
     width: 100%;
-    height: 180px;
+    height: 250px;
     object-fit: cover;
     filter: sepia(30%);
     transition: var(--transicion-suave);
+  
 }
 
 .timeline-evento:hover .timeline-imagen {
@@ -893,7 +904,8 @@ p {
     padding: 5px 10px;
     background-color: var(--color-secundario);
     color: var(--color-texto-claro);
-    margin-bottom: 5px; /* agrega separación */
+    margin-bottom: 5px;
+     /* agrega separación */
 }
 .timeline-item {
     display: flex;
@@ -915,44 +927,130 @@ p {
    SECCION: MEMORIA HISTORICA
    Contexto del gobierno de Calles
    ============================================ */
+/* ===============================
+/* ===============================
+   Estilos para la sección Memoria
+================================= */
 .seccion-memoria {
-    padding: var(--espaciado-seccion) 0;
-    background-color: var(--color-fondo);
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
-.memoria-contenido h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    margin-top: 15px;
+.seccion-memoria .etiqueta-seccion {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d9534f;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-.memoria-lista {
-    margin-bottom: 30px;
+.seccion-memoria h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    color: #222;
 }
 
-.memoria-item {
+.seccion-memoria .memoria-lista {
+    margin: 25px 0;
+}
+
+.seccion-memoria .memoria-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #555;
 }
 
-.memoria-item i {
-    color: var(--color-rojo);
-    font-size: 1.3rem;
+.seccion-memoria .memoria-item i {
+    color: #d9534f;
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
-.memoria-texto {
-    font-style: italic;
-    color: #666;
+.seccion-memoria .memoria-texto {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-top: 20px;
 }
 
-.memoria-imagen img {
-    width: 100%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+/* ===============================
+   Layout de dos columnas espejo
+================================= */
+.seccion-memoria .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+.seccion-memoria .col-lg-7,
+.seccion-memoria .col-lg-5 {
+    flex: 1;
+    padding: 15px;
+}
+
+.seccion-memoria .col-lg-7 {
+    order: 1; /* texto a la izquierda */
+}
+
+.seccion-memoria .col-lg-5 {
+    order: 2; /* imagen a la derecha */
+    text-align: center;
+}
+
+.seccion-memoria .memoria-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion-memoria .memoria-imagen img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 991px) {
+    .seccion-memoria .col-lg-7,
+    .seccion-memoria .col-lg-5 {
+        flex: 100%;
+        max-width: 100%;
+        order: unset;
+        text-align: center;
+    }
+
+    .seccion-memoria .memoria-lista {
+        justify-content: center;
+    }
+
+    .seccion-memoria .memoria-texto {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .seccion-memoria {
+        padding: 50px 15px;
+    }
+
+    .seccion-memoria h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
 
 /* ============================================
    SECCION: ACTO DE DIGNIDAD
