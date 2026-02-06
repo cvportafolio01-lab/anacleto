@@ -1549,7 +1549,7 @@ p {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 25px;
+    bottom: 100px;
     right: 25px;
     background-color: #25D366;
     color: #fff;
@@ -1559,7 +1559,7 @@ p {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 9999;
     display: flex;
-    align-items: center;
+    align-items: center ;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1570,28 +1570,13 @@ p {
     color: #fff;
     text-decoration: none;
 }
+
+.whatsapp-float {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 /* =========================
    WhatsApp flotante - Responsive
 ========================= */
 
-/* Tablets y pantallas medianas */
-@media (max-width: 992px) {
-    .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-/* Celulares */
-@media (max-width: 576px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-        bottom: 18px;
-        right: 18px;
-    }
-}
